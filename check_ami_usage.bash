@@ -36,13 +36,13 @@ for REGION in ${REGIONS}; do
             continue
         fi
 
-        grep -q -r ${id} ~/mozilla/repos/ci-configuration/*
+        grep -q -r ${id} ${CI_CONFIG_DIR}/*
         if [ $? -eq 0 ]; then
             echo "${REGION}: AMI ${id} referenced in ci-configuration for firefox"
             continue
         fi
 
-        grep -q -r ${id} ~/mozilla/repos/community-tc-config/*
+        grep -q -r ${id} ${COMMUNITY_CONFIG_DIR}/*
         if [ $? -eq 0 ]; then
             echo "${REGION}: AMI ${id} referenced in community-tc-config"
             continue
