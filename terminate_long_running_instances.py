@@ -87,10 +87,11 @@ if __name__ == "__main__":
                             print("%s: %s %s %s" % (region,
                                                     str(instance['LaunchTime']),
                                                     instance['InstanceId'],
-                                                    get_instance_name(instance)))
+                                                    get_instance_name(instance)),
+                                  flush=True)
                             instances_to_terminate.append(instance['InstanceId'])
 
-        print("%s: %d instances found" % (region, len(instances_to_terminate)))
+        print("%s: %d instances found" % (region, len(instances_to_terminate)), flush=True)
         for id in instances_to_terminate:
             try:
                 print('%s: Attempting to delete instance %s...' % (region, id), end='')
@@ -99,12 +100,12 @@ if __name__ == "__main__":
                     DryRun=DRY_RUN
                     )
                 if check_termination_result(response):
-                    print('DONE')
+                    print('DONE', flush=True)
                 else:
-                    print('FAILED')
+                    print('FAILED', flush=True)
                     pp.pprint(response)
             except ClientError as e:
                 if 'DryRunOperation' not in str(e):
                     raise
                 else:
-                    print('SKIPPED')
+                    print('SKIPPED', flush=True)
