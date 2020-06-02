@@ -12,7 +12,6 @@ if [ $num_instances -gt 0 ]; then
     j=0
     IFS=$'\n'
     for entry in `jq -c '.[]' ${INSTANCES_FILE}`; do
-    #for name in `cat ${INSTANCES_FILE} | jq -r '.[].name'`; do
         # Get name
         name=`echo ${entry} | jq -r '.name'`
         # Get zone
@@ -25,7 +24,7 @@ if [ $num_instances -gt 0 ]; then
             echo "DRYRUN: gcloud compute instances delete ${name} --zone ${zone}"
         else
             echo "Deleting ${name}..."
-            # gcloud compute instances delete ${name} --zone ${zone} --quiet
+            gcloud compute instances delete ${name} --zone ${zone} --quiet
             if [ $? == 0 ]; then
                 j=$((j+1))
             fi
