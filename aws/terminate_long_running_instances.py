@@ -76,7 +76,7 @@ if __name__ == "__main__":
             'us-west-1',
             'us-west-2',
             ]
-    NUM_DAYS = 5
+    NUM_DAYS = 3
     date_threshold = datetime.utcnow().replace(tzinfo=pytz.utc) - timedelta(days=NUM_DAYS)
 
     session = boto3.session.Session(profile_name=ACCOUNT)
