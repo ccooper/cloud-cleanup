@@ -1,8 +1,8 @@
 #!/bin/bash
 
 CURRENT_TS=`date +%Y%m%d%H%M%S`
-DATE_THRESHOLD=2020-05-30
-DRY_RUN="--dry-run"
+DATE_THRESHOLD=`date -v3d +%Y-%m-%d`
+#DRY_RUN="--dry-run"
 
 INSTANCES_FILE=data/GCP-${DATE_THRESHOLD}-instances-${CURRENT_TS}.json
 gcloud compute instances list --filter="creationTimestamp<${DATE_THRESHOLD}" --format json > ${INSTANCES_FILE}
