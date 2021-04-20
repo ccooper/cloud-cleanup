@@ -1,6 +1,6 @@
 appdirs==1.4.3
 attrs==18.2.0
-autobahn==20.4.3
+autobahn==20.12.3
 Automat==20.2.0
 black==18.9b0
 boto3==1.13.9
