@@ -38,7 +38,7 @@ six==1.14.0
 spake2==0.8
 toml==0.10.0
 tqdm==4.46.0
-Twisted==20.3.0
+Twisted==22.2.0
 txaio==20.4.1
 txtorcon==20.0.0
 urllib3==1.26.5
