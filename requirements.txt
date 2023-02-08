@@ -10,7 +10,7 @@ cffi==1.14.0
 Click==7.0
 configparser==5.0.0
 constantly==15.1.0
-cryptography==3.3.2
+cryptography==39.0.1
 docutils==0.15.2
 entrypoints==0.3
 flake8==3.7.9
