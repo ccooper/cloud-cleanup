@@ -10,7 +10,7 @@ from botocore.exceptions import ClientError
 from datetime import datetime, timedelta
 
 '''
-Here's the type of query we're tryp to replicate using boto3:
+Here's the type of query we're trying to replicate using boto3:
 
  aws ec2 --profile mfa --region us-west-1 describe-instances \
          --query 'Reservations[].Instances[?LaunchTime<=`2020-05-10`][].{launched: LaunchTime, id: InstanceId}'
